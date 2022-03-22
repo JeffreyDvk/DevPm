@@ -1,0 +1,118 @@
+@import '../../scss/globalVars.scss',
+        '../../scss/tools.scss';
+
+.modal{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 100vw;
+    width: fit-content;
+    @extend %flex;
+    justify-content: center;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+
+    &.show{
+        opacity: 1;
+        background-color: rgba(0,0,0,0.4);
+    }
+    &__content{
+        background-color: #fff;
+    }
+
+    &__header{
+        padding: 0.4em 0.5em ;
+        padding-right: 1em;
+        border-bottom: 2px solid $light-gray;
+        @extend %flex;
+
+        &__title{
+            font-size: var(--lg-text);
+            font-weight: 600;
+            color: $white-blue;
+
+            &.title-center{
+                text-align: center;
+            }
+        }
+    }
+
+    &__body{
+        padding: 1em 1em;
+
+        .with-label{
+            width: 100%;
+            margin-bottom: 0.8em;
+            @extend %flex;
+            align-items: flex-start;
+            
+            *{
+                display: inline-block;
+            }
+            label{
+                width: 40%;
+                
+                &:after{
+                    content: ' :';
+                }
+            }
+            select,input{
+                width: 60%;
+                border: 2px solid $light-gray;
+                padding: 0 0.4em;
+            }
+        }
+    }
+
+    &__actions{
+        text-align: end;
+        margin-top: 1.5em;
+
+        button{
+            margin-left: 0.5em;
+        }
+
+        &.content-center{
+            text-align: center;
+        }
+    }
+    
+    &__close-trigger{
+        margin-left: 3em;
+        transition: 0.5s;
+
+        &:hover{
+            opacity: 0.6;
+        }
+    }
+
+    .popup-icon{
+        margin-bottom: 0.8em;
+        font-size: var(--supra-title);
+
+        .modal__header__title{
+            margin-top: 0.5em;
+        }
+    }
+    .popup{
+
+        &__warning{
+            
+            *{
+                color: $red;
+            }
+        }
+    }
+}
+@media #{$sm-screen}{
+    .datatable__filter{
+        display: block;
+
+        *{
+            margin-bottom: 0.5em;
+        }
+    }
+}

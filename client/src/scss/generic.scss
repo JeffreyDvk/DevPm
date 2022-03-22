@@ -1,0 +1,108 @@
+@import 'globalVars.scss';
+// Fonts
+
+@font-face {
+    font-family: 'Economica';
+    src: url('../assets/fonts/Economica.ttf');
+}
+@font-face {
+    font-family: 'AlegreyaSans';
+    src: url('../assets/fonts/AlegreyaSans.ttf');
+}
+
+// Resets
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Economica" , 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.4em;
+}
+html{
+    font-size: var(--xs-text);
+}
+body{
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    margin-bottom: 0;
+    font-weight: inherit;
+}
+::-webkit-scrollbar{
+    width: 6px;
+    &-track {
+        background: $light; 
+        border-radius: 10px;
+    }
+    &-thumb {
+        background: $gray;
+        border-radius: 10px;
+    }
+    &:hover {
+        background: $light; 
+        border-radius: 10px;
+    }
+}
+a{
+    text-decoration: none;
+    transition: 0.25s;
+}
+a:hover{
+    opacity: 0.8;
+}
+li{
+    list-style: none;
+}
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin: 15px;
+
+}
+button{
+    border: none;
+    background: none;
+    color: inherit;
+    font-size: inherit;
+    text-align: inherit;
+    transition: 0.25s;
+}
+button:hover{
+    cursor: pointer;
+}
+
+input,select,option{
+    border: none;
+    background: inherit;
+    color: inherit;
+    font-size: inherit;
+}
+option{
+    color: inherit;
+}
+input:focus,textarea:focus,select:focus{
+    outline: none;
+}
+input:-webkit-autofill{
+    transition: background-color 50000s ease-in-out 0s , color 50000s ease-in-out 0s
+}
+::placeholder{
+    color: inherit;
+}
+
+
+.alert{
+    position: fixed;
+    top: 2em;
+    padding: 0.4em 0.8em;
+
+    &.error{
+        background-color: $light-red;
+    }
+}
+
+.content-center{
+    text-align: center;
+}

@@ -1,0 +1,76 @@
+// Responsive breakpoints
+$lg-screen : "only screen and ( max-width: 1200px )";
+$md-screen : "only screen and ( max-width: 850px )";
+$sm-screen : "only screen and ( max-width: 600px )";
+$xs-screen : "only screen and ( max-width: 400px )";
+
+// Text size
+:root{
+    --supra-title : 80px;
+    --extra-title: 60px;
+    --lg-title : 50px;
+    --md-title : 36px;
+    --sm-title : 32px;
+    --lg-text : 28px;
+    --md-text : 24px;
+    --sm-text : 20px;
+    --tn-text : 18px;
+    --xs-text : 16px;
+}
+
+@media #{$lg-screen} {
+    :root{
+        --supra-title : 72px;
+        --extra-title: 52px;
+    }
+}
+@media #{$sm-screen} {
+    :root{
+        --supra-title : 58px;
+        --extra-title: 44px;
+        --lg-title : 40px;
+        --md-title : 30px;
+        --sm-title : 26px;
+        --lg-text : 24px;
+        --md-text : 22px;
+        --sm-text : 18px;
+        --tn-text : 16px;
+        --xs-text : 14px;
+    }
+}
+
+// Colors
+
+$dark : #242424;
+$gray : #414141;
+$light-gray: #cccccc;
+$light :  #E4D8F2;
+$white: #f0ecf5;
+$blue : #245280;
+$darken: rgba(0,0,0,0.2);
+$light-red : #D35A61;
+$red : #fa414a;
+$white-blue : #3B7EC2;
+$green : #247427;
+
+// Extensible blocks
+
+%full_viewport{
+    width: 100vw;
+    min-height: 100vh;
+}
+
+%flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+%flex-center{
+    @extend %flex;
+    justify-content: center;
+}
+%bg-cover-center{
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

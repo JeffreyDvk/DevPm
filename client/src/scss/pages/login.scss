@@ -1,0 +1,164 @@
+@import '../globalVars.scss';
+
+.login{
+    @extend %bg-cover-center;
+    @extend %flex-center;
+    background-image : url("../../assets/img/back/bg11.jpg");
+    min-height: 100vh;
+    color : #fff;
+    font-size: var(--md-text);
+
+    .main-container{
+        display: flex;
+        
+        & > div{
+            padding: 4em 0em 0 1em;
+            height: 500px;
+            min-width: 400px;
+            max-width: 400px;
+            position: relative;
+            z-index: 1;
+
+            &:not(.image-block){
+                background-color: rgb(248, 248, 248);
+                transition: 1s;
+                background: linear-gradient(125deg,$dark,#494949);
+                @extend %bg-cover-center;
+
+                form{
+
+                    button[type="submit"]{
+                        margin-top: 1em;
+                        border-radius: 4px;
+                        border: 1px solid #fff8;
+                        padding: 0.1em 0.4em;
+                        font-weight: 500;
+                        margin-right: 1em;
+
+                        &:hover{
+                            box-shadow:0 0 3px rgb(242, 241, 241);
+                        }
+                    }
+
+                    .form-input,.form-select{
+                        width : 95%;
+                        padding: 0.8em 0;
+                        border-bottom: 1px solid #fff;
+                        font-size: var(--sm-text);
+                    }
+                    .form-select option{
+                        background-color: $dark;
+                    }
+                    
+                    .half-field{
+                        width: 45%;
+                        margin-right: 5%;
+                        display: inline-block;
+                    }
+
+                }
+
+                .switch{
+                    display: inline-block;
+                    font-size: var(--tn-text);
+
+                    &-state{
+                        text-decoration: underline;
+                        margin-top: 0.5em;
+                        margin-left: 1em;
+                    }
+                }
+            }
+            
+            .container-title{
+                margin-bottom: 0.5em;
+                font-size: var(--lg-text);
+            }
+        }
+        .signin-container{
+            padding: 1em 1em 0 1em;
+            transform: rotateY(180deg);
+
+            *{
+                opacity: 0;
+                transition: opacity 2s;
+            }
+            
+            &.active{
+                transform: rotateY(0deg);
+                
+                *{
+                    opacity: 1;
+                }
+            }
+        }
+        .login-container {
+            *{
+                transition: opacity 2s;
+            }
+        }
+        .login-container.active{
+            transform: rotateY(180deg);
+
+            *{
+                opacity: 0;
+            }
+        }
+
+        .image-block{
+            position: absolute;
+            background-image: url("../../assets/img/back/bg10.jpg");
+            @extend %bg-cover-center;
+            background-position: right;
+            background-size: 100% 100%;
+
+            margin-left: 400px;
+            transition: 0.85s;
+            z-index: 2;
+
+            &.active{
+                margin-left: 0px;
+            }
+        }
+        
+    }
+}
+
+@media #{$md-screen} {
+    #root{
+        .main-container{
+            display: block;
+            position: relative;
+
+            & > div{
+                padding: 4em 0.5em 0 1em;
+                min-height: 500px;
+                min-width: unset;
+                max-width: none;
+                width: 90%;
+                margin-left: 20px;
+            }
+            .image-block{
+                display: none;
+            }
+            .login-container{
+                z-index: 2;
+            }
+            .signin-container{
+                position: absolute;
+                padding-top: 2em;
+                top: 0;
+                left: 0%;
+                
+
+                &.active{
+                    transform: rotateY(0deg);
+                    z-index: 3;
+                }
+            }
+
+        }
+        
+    }
+    
+}

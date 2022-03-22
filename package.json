@@ -1,0 +1,26 @@
+{
+  "name": "devpm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "proxy": "http://localhost:5000",
+  "scripts": {
+    "dev": "concurrently --kill-others \"nodemon server/app.js\" \" cd client && npm  run start \" ",
+    "start": "concurrently --kill-others \"nodemon server/app.js\" \" cd client && npx serve -s build \" "
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "concurrently": "^7.0.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "mongodb": "^4.4.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "express-pino-logger": "^7.0.0",
+    "pino-colada": "^2.2.2"
+  }
+}

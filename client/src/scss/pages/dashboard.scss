@@ -1,0 +1,137 @@
+@import '../globalVars.scss';
+@import url("https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.css");
+@import '../css/clean-switch.css',
+        "../../assets/icons/bi/bootstrap-icons.scss";
+
+html{
+    overflow-x: hidden;
+}
+#root{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color : $dark;
+    font-size: var(--md-text);
+
+    .loader{
+        display: none;
+    }
+    .header-bar{
+        width: 100%;
+        box-shadow: 0 2px 2px $darken;
+        @extend %flex;
+        padding: 0.8em 1.6em;
+        color: $blue;
+
+        &__info{
+            @extend %flex;
+            .menu-trigger{
+                transition: 0.75s;
+                &.active{
+                    transform: rotateY(180deg);
+                }
+
+            }
+            .logo{
+                margin-left: 1em;
+            }
+        }
+        .user{
+            color: $blue;
+            
+            &__icon{
+                margin-right: 0.5em;
+            }
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    .content{
+        position: relative;
+        height: 100%;
+
+        .nav-bar{
+            width: 130px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 70px;
+            box-shadow: 2px 0 2px $darken;
+            height: 100%;
+            min-height: calc(100vh - 72px);
+            transition: 0.5s ease-in-out;
+
+            &__button{
+                color: inherit;
+                position: relative;
+                padding-top: 0.8em;
+                padding-left: 0.6em;
+                padding-bottom: 1em;
+                transition: 0.25s;
+                display: block;
+                font-size: var(--sm-text);
+
+                i{
+                    margin-right: 0.4em;
+                }
+
+                &.active,&:hover{
+                    color: $white-blue;
+                    cursor: pointer;
+                }
+                
+            }
+            &.hide{
+                margin-left: -140px;
+
+                & ~ .page{
+                    margin-left: 0;
+                }
+            }
+        }
+        .page{
+            margin-left: 130px;
+            padding: 2em;
+            height: 100%;
+            flex-grow: 1;
+            transition: 0.5s ease-in-out;
+
+            .form-input,.form-select{
+                border: none;
+                background: inherit;
+                color: inherit;
+                font-size: inherit;
+                border: 2px solid $dark;
+                padding: 0.1em 0.4em;
+                margin: 0.3em 0;
+                width: 85%;
+            }
+
+            .half-field{
+                width: 40%;
+                margin-right: 5%;
+            }
+        }
+    }
+}
+
+@media #{$sm-screen} {
+    #root .content .page{
+        padding: 2em 0.5em;
+        
+        .dataTables_length,.dataTables_filter{
+            display: block;
+        }
+        .dataTables_info,.dataTables_paginate,.dataTables_length,.dataTables_filter{
+            text-align: start;
+        }
+        .form-input , .form-select{
+            width: 100%;
+        }
+        .half-field{
+            width: 100%;
+        }
+    }
+    
+}

@@ -1,0 +1,58 @@
+@import '../globalVars.scss',
+        '../tools.scss';
+
+.create-task{
+    margin-bottom: 2em;
+}
+.row-action{
+    position: relative;
+    padding: 0.2em;
+    
+    *{
+        width: 100%;
+        text-align: center;
+    }
+
+    &__trigger{
+        background-color: $white-blue;
+        color: #fff;
+        border-radius: 4px;
+        padding: 0.2em 0.8em;
+        z-index: 1;
+
+        &.action-disable{
+            background-color: $gray;
+            
+            &:hover{
+                cursor: default;
+            }
+        }
+    }
+
+    &s{
+        position: absolute;
+        top: 50%;
+        right: 95%;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        border-radius: 6px;
+        overflow: hidden;
+        display: none;
+        z-index: 2;
+
+        &.active{
+            display: block;
+        }
+
+        &__element{
+            display: block;
+            padding: 0.2em 0.8em;
+            border-bottom: 1px solid $light-gray;
+
+            &.row-delete{
+                background-color: $red;
+                color: #fff;
+            }
+        }
+    }
+}
