@@ -21,7 +21,7 @@
 > npm run start
 
 ## Admin account
-> All informations needed to connnect as Admin is in the **server/Seeds/AdminSeeder** fille
+> All informations needed to connect as Admin are in the **server/Seeds/Admin Seeder** file
 
 ## Warning
 > Be sure to have on your machine nodeJs , a mysql database and a good connection 
